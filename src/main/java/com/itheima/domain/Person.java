@@ -14,68 +14,70 @@ import java.util.*;
 @Component
 @ConfigurationProperties(prefix = "person")
 public class Person {
-    private String id;
-    private String firstname;
-    private String lastname;
-    private Address address;
-    private List<Family> familyList;
+    private int id;
+    private String name;
+    private List hobby;
+    private String[] family;
+    private Map map;
+    private Pet pet;
 
-    public Person() {
+    public String getName() {
+        return name;
     }
 
-    public Person(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public List getHobby() {
+        return hobby;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setHobby(List hobby) {
+        this.hobby = hobby;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String[] getFamily() {
+        return family;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setFamily(String[] family) {
+        this.family = family;
     }
 
-    public Address getAddress() {
-        return address;
+    public Map getMap() {
+        return map;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setMap(Map map) {
+        this.map = map;
     }
 
-    public List<Family> getFamilyList() {
-        return familyList;
+    public Pet getPet() {
+        return pet;
     }
 
-    public void setFamilyList(List<Family> familyList) {
-        this.familyList = familyList;
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
     @Override
     public String toString() {
         return "Person{" +
-                "id='" + id + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", address=" + address +
-                ", familyList=" + familyList +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", hobby=" + hobby +
+                ", family=" + Arrays.toString(family) +
+                ", map=" + map +
+                ", pet=" + pet +
                 '}';
     }
 }
